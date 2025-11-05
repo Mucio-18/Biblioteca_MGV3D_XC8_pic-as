@@ -6,8 +6,8 @@ DCounter4: DS 1
     
 psect code
 ;Retardos en Minutos
-Delay1h:
-Delay60m:
+delay1h:
+delay60m:
     MOVLW 0X09
     MOVWF DCounter1
     MOVLW 0Xce
@@ -27,7 +27,7 @@ Delay60m:
 	GOTO LOOP60m
     RETURN
 
-Delay30m:
+delay30m:
     MOVLW 0X82
     MOVWF DCounter1
     MOVLW 0X67
@@ -48,7 +48,7 @@ Delay30m:
 	NOP
     RETURN
 
-Delay15m:
+delay15m:
     MOVLW 0X3f
     MOVWF DCounter1
     MOVLW 0Xb4
@@ -68,7 +68,7 @@ Delay15m:
 	GOTO LOOP15m
     RETURN
     
-Delay10m:
+delay10m:
     MOVLW 0Xd3
     MOVWF DCounter1
     MOVLW 0Xcd
@@ -90,7 +90,7 @@ Delay10m:
     NOP
     RETURN
     
-Delay5m:
+delay5m:
     MOVLW 0X67
     MOVWF DCounter1
     MOVLW 0Xe7
@@ -112,7 +112,7 @@ Delay5m:
     NOP
     RETURN
 
-Delay1m:
+delay1m:
     MOVLW 0X43
     MOVWF DCounter1
     MOVLW 0X62
@@ -135,7 +135,7 @@ Delay1m:
     RETURN
 
 ;Retardos en Segundos
-Delay30s:
+delay30s:
     MOVLW 0Xa1
     MOVWF DCounter1
     MOVLW 0X31
@@ -152,7 +152,7 @@ Delay30s:
     RETURN
 
 
-Delay10s:
+delay10s:
     MOVLW 0Xde
     MOVWF DCounter1
     MOVLW 0Xbb
@@ -169,7 +169,7 @@ Delay10s:
     NOP
     RETURN
     
-Delay5s:
+delay5s:
     MOVLW 0X6d
     MOVWF DCounter1
     MOVLW 0X5e
@@ -185,7 +185,7 @@ Delay5s:
 	GOTO LOOP5s
     RETURN
 
-Delay1s:
+delay1s:
     MOVLW 0Xac
     MOVWF DCounter1
     MOVLW 0X13
@@ -203,7 +203,7 @@ Delay1s:
     RETURN
 
 ;Retardos en mili Segundos
-Delay500ms:
+delay500ms:
     MOVLW 0X54
     MOVWF DCounter1
     MOVLW 0X8a
@@ -220,7 +220,7 @@ Delay500ms:
     NOP
     RETURN
 
-Delay100ms:
+delay100ms:
     MOVLW 0Xdc
     MOVWF DCounter1
     MOVLW 0X82
@@ -233,7 +233,7 @@ Delay100ms:
     NOP
     RETURN
 
-Delay50ms:
+delay50ms:
     MOVLW 0Xed
     MOVWF DCounter1
     MOVLW 0X41
@@ -245,7 +245,7 @@ Delay50ms:
 	GOTO LOOP50ms
     RETURN
     
-Delay10ms:
+delay10ms:
     MOVLW 0Xfa
     MOVWF DCounter1
     MOVLW 0X0d
@@ -258,7 +258,7 @@ Delay10ms:
     NOP
     RETURN
 
-Delay5ms:    
+delay5ms:    
     MOVLW 0X7b
     MOVWF DCounter1
     MOVLW 0X07
@@ -272,7 +272,7 @@ Delay5ms:
     NOP
     RETURN
     
-Delay1ms:
+delay1ms:
     MOVLW 0X49
     MOVWF DCounter1
     MOVLW 0X02
