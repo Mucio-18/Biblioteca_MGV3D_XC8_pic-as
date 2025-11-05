@@ -1,11 +1,11 @@
-#define SPITRIS TRISB
-#define MOSITRIS TRISB0
-#define MISOTRIS TRISB1
-#define SCKTRIS	TRISB2
-#define SPIPORT PORTB
-#define MOSI RB0
-#define MISO RB1
-#define SCK RB2
+;#define SPITRIS TRISB
+;#define MOSITRIS TRISB0
+;#define MISOTRIS TRISB1
+;#define SCKTRIS	TRISB2
+;#define SPIPORT PORTB
+;#define MOSI RB0
+;#define MISO RB1
+;#define SCK RB2
 
 psect udata_bank0
 SPITXREG:	DS 1
@@ -34,6 +34,7 @@ SPISlaveIni:
 	return
 
 SPIMasterTX:
+	movwf SPITXREG
 	movlw 8
 	movwf SPICOUNTER
 SPITXCicle:
