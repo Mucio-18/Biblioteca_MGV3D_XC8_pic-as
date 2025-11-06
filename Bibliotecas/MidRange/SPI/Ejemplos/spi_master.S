@@ -16,38 +16,39 @@
 #define SCK RB2
 #define SS RB7
 
+#define SS RB7
+
 psect udata_bank0
 var1:	DS 1
 
 psect resetVec,global,class=CODE,delta=2
 resetVec:
-	pagesel resetVec
-	goto progPrin
+    pagesel resetVec
+    goto progPrin
 
 psect intVec,global,class=CODE,delta=2
 intVec:
-	nop
-	retife
+    nop
+	retfie
 
 psect code
 progIni:
-	banksel TRISB
-	bcf TRISB7
-	call SPIMasterIni
-	banksel 0
-	bsf SS
-	return
+    banksel TRISB
+    bcf TRISB7
+    call SPIMasterIni
+    banksel 0
+    bsf SS
+    return
 
 progPrin:
-	call progIni
-	mainLoop:
-		bcf SS			;Habilita el esclavo
-		movlw 01010101B		;transmite 0x55
-		call SPIMasterTx	
-		bsf SS			;Deshabilita el esclavo
-		call delay10ms
-		goto mainLoop
+    call progIni
+mainLoop:
+    bcf SS			;Habilita el esclavo
+    movlw 01010101B		;transmite 0x55
+    call SPIMasterTX	
+    bsf SS			;Deshabilita el esclavo
+    call delay10ms
+    goto mainLoop
 
 end resetVec
-		
-		
+	

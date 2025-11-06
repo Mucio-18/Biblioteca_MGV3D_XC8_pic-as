@@ -43,16 +43,23 @@ SPITXCicle:
 	goto SPITXCero
 	SPITXUno:
 		bsf MOSI
-		call SPIClock		
+		call SPI_pulse		
 		goto NextCicleTX
 	SPITXCero:
 		bcf MOSI
-		call SPIClock
+		call SPI_pulse
 	NextCicleTX:
 		decfsz SPICOUNTER,F
 		goto SPITXCicle
 		return
 
+SPI_pulse:
+    bsf SCK
+    call SPIClock		
+    bcf SCK
+    call SPIClock
+    return
+		
 SPISlaveRX:
 	movlw 8
 	movwf SPICOUNTER
